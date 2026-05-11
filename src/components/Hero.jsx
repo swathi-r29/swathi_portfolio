@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import profileImg from '../assets/N-3519 copy.jpg';
+import resumePdf from '../assets/swathi _resume.pdf';
 import './Hero.css';
 
 const roles = ['Software Developer', 'Full-Stack Builder', 'Problem Solver'];
@@ -44,7 +45,7 @@ export default function Hero() {
             real-world problems using efficient algorithms and clean code.
           </p>
           <div className="hero-buttons">
-            <a href="#projects" className="btn-primary">View My Work ↓</a>
+            <a href={resumePdf} target="_blank" rel="noopener noreferrer" className="btn-primary">View Resume ↓</a>
             <a href="#contact" className="btn-outline">Contact Me</a>
           </div>
           <div className="hero-stats">

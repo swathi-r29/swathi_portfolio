@@ -20,8 +20,28 @@
 .about-detail-item {
   padding: 16px; border-radius: 12px; background: var(--bg-card);
   border: 1px solid var(--border-color); transition: all 0.3s;
+  position: relative; z-index: 1;
 }
-.about-detail-item:hover { border-color: rgba(6,214,160,0.2); transform: translateY(-2px); }
+
+.about-detail-item::before, .edu-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  padding: 1.5px;
+  background: linear-gradient(45deg, transparent, var(--accent), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.about-detail-item:hover { transform: translateY(-4px); }
+.about-detail-item:hover::before { opacity: 1; }
+
 .about-detail-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 .about-detail-value { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
 
@@ -34,8 +54,10 @@
   padding: 20px 20px 20px 24px; border-radius: 12px; background: var(--bg-card);
   border: 1px solid var(--border-color); margin-bottom: 16px;
   transition: all 0.3s; border-left: 3px solid var(--accent);
+  position: relative; z-index: 1;
 }
-.edu-item:hover { background: var(--bg-card-hover); transform: translateX(4px); }
+.edu-item:hover { transform: translateX(8px); }
+.edu-item:hover::before { opacity: 1; }
 .edu-degree { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
 .edu-school { color: var(--text-secondary); font-size: 0.9rem; }
 .edu-detail { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-top: 4px; }
