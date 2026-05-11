@@ -1,0 +1,123 @@
+.achievements-section {
+  margin-bottom: 60px;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.awards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.award-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.award-icon {
+  font-size: 1.8rem;
+}
+
+.award-info h4 {
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.award-org {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Certifications Grid */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.cert-card-full {
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-image: linear-gradient(to right, rgba(6, 214, 160, 0.08) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.cert-card-full:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent);
+  background-position: left bottom;
+}
+
+.cert-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  /* Clean landscape ratio */
+  overflow: hidden;
+  background: #000;
+}
+
+.cert-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* or contain depending on image quality */
+}
+
+.cert-placeholder-large {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+.cert-content {
+  padding: 20px 24px;
+}
+
+.cert-content h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cert-content p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .awards-list {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}

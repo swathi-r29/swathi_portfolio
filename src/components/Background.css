@@ -1,0 +1,40 @@
+.background-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(6, 214, 160, 0.05); /* Very subtle teal */
+  border: 1px solid rgba(6, 214, 160, 0.08);
+  border-radius: 4px;
+  animation: floatBackground linear infinite;
+}
+
+.shape-1 { width: 100px; height: 100px; top: 10%; left: 10%; animation-duration: 25s; }
+.shape-2 { width: 150px; height: 150px; top: 70%; left: 80%; animation-duration: 35s; border-radius: 50%; }
+.shape-3 { width: 80px; height: 80px; top: 40%; left: 60%; animation-duration: 20s; }
+.shape-4 { width: 120px; height: 120px; top: 80%; left: 20%; animation-duration: 30s; }
+.shape-5 { width: 60px; height: 60px; top: 20%; left: 85%; animation-duration: 18s; border-radius: 50%; }
+.shape-6 { width: 180px; height: 180px; top: 50%; left: -5%; animation-duration: 40s; }
+
+@keyframes floatBackground {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translate(100px, -100px) rotate(360deg); opacity: 0; }
+}
+
+/* Add a slow breathing pulse to some */
+.shape-2, .shape-5 {
+  animation: floatBackground linear infinite, pulseBackground 8s ease-in-out infinite;
+}
+
+@keyframes pulseBackground {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
